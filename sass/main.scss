@@ -1,0 +1,45 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/animation";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+
+@import "layout/grid";
+@import "layout/header";
+
+@import "pages/home";
+
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* font-size: 10px; this defines what 1rem is. */
+    font-size: 62.5%;
+    /* Browser's root fontsize is 16px. 62.5% of 16px is 10px */
+}
+
+body {
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
