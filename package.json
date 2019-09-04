@@ -4,11 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "concat:css": "concat -o css/style.cancat.css css/style.comp.css"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "node-sass": "^4.12.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "concat": "^1.0.3"
   }
 }

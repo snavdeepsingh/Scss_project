@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* font-size: 10px; this defines what 1rem is. */
+    font-size: 62.5%;
+    /* Browser's root fontsize is 16px. 62.5% of 16px is 10px */
+
+// Note - for Desktop first model media query for higher screen size come first. 
+// for the Mobile first Design it is the other way around, media query for lower screen size come first
+   
+// following order of screen size is for the Desktop first design.
+    @include respond(tab-land) {   // width < 900px?
+        font-size: 56.25%;  // here 1rem = 9px, 9/16 = 56.25%
+    }
+
+    @include respond(tab-port) {  // width < 600px?
+        font-size: 50%;   // here 1rem = 8px, 8/16 = 50%
+    }
+
+     // @include respond(phone) {
+    //     font-size: 50%;
+    // }
+    
+    @include respond(big-desktop) {
+        font-size: 75%;     // here 1rem = 12px, 12/16 = 75%
+    }
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port) {  
+        padding: 0; 
+    }
+}
