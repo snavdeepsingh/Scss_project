@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "concat:css": "concat -o css/style.cancat.css css/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.cancat.css -o css/style.prefix.css"
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.cancat.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +19,7 @@
   "devDependencies": {
     "autoprefixer": "^9.6.1",
     "concat": "^1.0.3",
+    "npm-run-all": "^4.1.5",
     "postcss-cli": "^6.1.3"
   }
 }
