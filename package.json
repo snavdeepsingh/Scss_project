@@ -6,7 +6,8 @@
   "scripts": {
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
-    "concat:css": "concat -o css/style.cancat.css css/style.comp.css"
+    "concat:css": "concat -o css/style.cancat.css css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.cancat.css -o css/style.prefix.css"
   },
   "author": "",
   "license": "ISC",
